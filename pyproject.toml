@@ -1,0 +1,74 @@
+[tool.poetry]
+name = "tensorflow02_learn"
+version = "0.0.1"
+description = "A Collection of modules for exploring tensorflow"
+repository = "="
+authors = ["Brownian Brownies"]
+
+
+packages = [
+    { include = "tools" },
+    { include = "src" },
+    { include = "app" },
+    { include = "tests" },
+    { include = "dataclasses" },
+    { include = "config" },
+]
+
+
+[tool.poetry.dependencies]
+python = ">= 3.8,< 3.9"
+numpy = "^1.19.2"
+opencv-python = "^4.4.0"
+Pillow = "^7.2.0"
+sklearn = "^0.0"
+jsonlines = "^1.2.0"
+matplotlib = "^3.3.3"
+seaborn = "^0.11.0"
+yamldataclassconfig = "^1.5.0"
+scipy = "^1.5.4"
+pyaml = "^20.4.0"
+pytest = "^6.2.1"
+black = "^20.8b1"
+pylint = "^2.6.0"
+mypy = "^0.790"
+hypothesis = "^6.1.1"
+scikit-learn = "^0.23.2"
+
+
+tensorflow = "^2.4.1"
+# pyproject.toml
+
+[tool.pytest.ini_options]
+minversion = "6.0"
+addopts = "-ra -q"
+testpaths = [
+    "tests",
+]
+
+
+[tool.black]
+line-length = 120
+exclude = '''
+(
+  /(
+      \.eggs         # exclude a few common directories in the root of the project
+    | \.git
+    | \.mypy_cache
+    | \.tox
+    | \.venv
+    | _build
+    | buck-out
+    | build
+    | dist
+    | scenario_runner/scenario_runner-0.9.10
+    | simulator/utils/navigation
+  )/
+  # | foo.py           # also separately exclude a file named foo.py in the root of the project
+)
+'''
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
